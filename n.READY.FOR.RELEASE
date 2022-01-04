@@ -1,9 +1,9 @@
-0.1.0-pre-alpha READY.FOR.RELEASE
+0.1.2-pre-alpha READY.FOR.RELEASE
 
-last commit f6bb797fd252d4ea301d9ed601ce2a89fe227f57
+last commit 8b9f5a83a3c696a659d17801635a63781073db5b
 
-Date:   Sun Jan  2 18:46:50 UTC 2022
+Date:   Tue Jan  4 00:41:11 UTC 2022
 
-    pre-RELEASE
+    IP Notice printed
     
-    On branch rp2040-multicore-a
+    On branch rp2040-2core-7seg-shiftreg-bb
