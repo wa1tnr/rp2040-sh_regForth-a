@@ -1,4 +1,5 @@
 \ core.fs 
+\ Tue  4 Jan 18:15:19 UTC 2022 - local mods
 
 0 [if]
 Copyright (C) 2016-2021 by Charles Shattuck.
@@ -112,7 +113,9 @@ code off 68 ,
 code fl@ 69 ,
 code fl! 70 ,
 code cpl 71 ,
--code /branch  72 ,
+code tusec 72 ,
+code msec 73 ,
+-code /branch  74 ,
 
 :m begin (  - a)  here m;
 :m again ( a)  branch [ 2/ ] , m;

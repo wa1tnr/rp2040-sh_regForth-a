@@ -1,5 +1,5 @@
 // sketch.cpp
-// Sun  2 Jan 18:38:07 UTC 2022
+// Tue  4 Jan 18:15:19 UTC 2022
 
 #warning sketch.cpp seen
 
@@ -10,6 +10,7 @@
 #include <Keyboard.h>
 #include "rp2040.h" // rp2040.cpp has routines that belong in main .ino file
 #include "forth_defines.h" // textual tags
+#include "timing.h"
 
 // Forth registers
 uint32_t T=0; // cached top of data stack
@@ -588,7 +589,9 @@ void (*function[])()={
     _flfetch, // 69
     _flstore, // 70
     _cpl, // 71
-    _dropzbranch , // 72
+    _wait_10_usec, // 72
+    _wait_1000_usec, // 73
+    _dropzbranch , // 74
 };
 
 void _execute(){
