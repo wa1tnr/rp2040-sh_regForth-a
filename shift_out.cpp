@@ -292,6 +292,7 @@ void encode_two(void) { // 2
 
 void encode_eight(void) { // 8
     ledval = 1 + 2 + 4 + 8 + 16 + 32 + 64 + 0;
+//                 3   7   15  31   63   127
 }
 
 void encode_nine(void) { // 9
@@ -435,6 +436,7 @@ void setup_sr(void) {
     pinMode(latchPin, OUTPUT);
     pinMode(clockPin, OUTPUT);
     pinMode(dataPin, OUTPUT);
+    blankleds();
 }
 
 #ifdef EXPOSED_DIGITS
@@ -492,7 +494,6 @@ void lfc_test(void) {
 }
 
 void msg_test(void) { // message comes from LVAL_0 thru 3
-    blankleds();
     for (int j = 2; j > 0; j--) {
         for (int k = DURATION; k > 0; k--) {
             // encode_ltr_a();
@@ -512,8 +513,13 @@ void nopp(void) { }
 // encodings are inexpensive, repeating them as actions, isn't.
 
 void loop_sr(void) {
-    if (CMD == 6) { msg_test(); }
-    nopp();
+    if (CMD == 6) {
+        // blankleds();
+        for (unsigned long count = REPS; count > 0; count--) {
+            msg_test();
+        }
+        t_btwn_msgs(); blankleds();
+    }
 }
 /*
     if (CMD == 7) { lfc_test(); return; }

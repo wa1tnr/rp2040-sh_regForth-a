@@ -39,11 +39,49 @@ turnkey
 ;
 
 : deme \ no stack effects
-    lv0!  lv1!  lv2!  lv3!
-    6 #, cmd!
-    \ timex
-    \ 3 #, for timex next
+    4  #,  lv0!
+    8  #,  lv1!
+    16 #,  lv2!
+    32 #,  lv3!
+    6  #,  cmd!
 ;
+
+: demf \ no stack effects
+
+    127 #,  lv0!
+      0 #,  lv1!
+      0 #,  lv2!
+      0 #,  lv3!
+      6 #,  cmd!
+    timex
+      1 #,  cmd!
+
+      0 #,  lv0!
+    127 #,  lv1!
+      0 #,  lv2!
+      0 #,  lv3!
+      6 #,  cmd!
+    timex
+      1 #,  cmd!
+
+      0 #,  lv0!
+      0 #,  lv1!
+    127 #,  lv2!
+      0 #,  lv3!
+      6 #,  cmd!
+    timex
+      1 #,  cmd!
+
+      0 #,  lv0!
+      0 #,  lv1!
+      0 #,  lv2!
+    127 #,  lv3!
+      6 #,  cmd!
+    timex
+      1 #,  cmd!
+;
+
+: noppp 1 #, drop ;
 
 : id ." Thu  6 Jan 12:25:56 UTC 2022" cr
      ." lorkadees    74hc595 shift register" cr

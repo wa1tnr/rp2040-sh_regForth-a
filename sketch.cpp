@@ -593,19 +593,23 @@ void _cmd_store() { // hum
 }
 
 void _lv0_store() {
-    LVAL_0 = 1; // glyph encoded into 8 bits
+    LVAL_0=T; // glyph encoded into 8 bits
+    DROP;
 }
 
 void _lv1_store() {
-    LVAL_1 = 2;
+    LVAL_1=T;
+    DROP;
 }
 
 void _lv2_store() {
-    LVAL_2 = 4;
+    LVAL_2=T;
+    DROP;
 }
 
 void _lv3_store() {
-    LVAL_3 = 8;
+    LVAL_3=T;
+    DROP;
 }
 
 void _execute();
