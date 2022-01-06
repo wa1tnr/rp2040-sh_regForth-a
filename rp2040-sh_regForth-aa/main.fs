@@ -1,5 +1,5 @@
 \ main.fs
-\  Tue  4 Jan 18:15:19 UTC 2022
+\  Thu  6 Jan 17:49:16 UTC 2022
 
 target
 turnkey
@@ -27,10 +27,10 @@ turnkey
        ." demo complete. "
 ;
 
-: id ." Tue  4 Jan 18:15:19 UTC 2022" cr
+: id ." Thu  6 Jan 17:49:16 UTC 2022" cr
      ." lorkadees    74hc595 shift register" cr
      ." +timing.cpp" cr
-     ." rp2040-sh_regForth-a" cr ;
+     ." rp2040-sh_regForth-aa" cr ;
 
 turnkey decimal initGPIO interpret
 

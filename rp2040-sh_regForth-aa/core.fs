@@ -1,5 +1,5 @@
 \ core.fs 
-\ Tue  4 Jan 18:15:19 UTC 2022 - local mods
+\ Thu  6 Jan 17:49:16 UTC 2022 - local mods
 
 0 [if]
 Copyright (C) 2016-2021 by Charles Shattuck.

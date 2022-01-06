@@ -1,5 +1,5 @@
 \ main.fs
-\  Tue  4 Jan 18:15:19 UTC 2022
+\  Thu  6 Jan 17:55:54 UTC 2022
 
 target
 turnkey
@@ -101,9 +101,9 @@ turnkey
 
 : noppp 1 #, drop ;
 
-: id ." Thu  6 Jan 12:25:56 UTC 2022" cr
-     ." lorkadees    74hc595 shift register" cr
-     ." +cmd +timing.cpp" cr
+: id ." Thu  6 Jan 17:55:54 UTC 2022" cr
+     ." cerfaxita    74hc595 shift register" cr
+     ." +fthenc +cmd +timing.cpp" cr \ +fthenc is forth encoding of glyphs
      ." rp2040-sh_regForth-a" cr ;
 
 turnkey decimal initGPIO interpret
