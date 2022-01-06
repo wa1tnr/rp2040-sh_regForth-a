@@ -23,7 +23,14 @@ uint16_t P=0; // program memory pointer
 uint16_t A=0; // RAM pointer
 unsigned long elapsed=0; // for counter timer
 uint64_t D=0; // for double result of multiplication
+
+// application regs and flags
 uint8_t FL=0; // flags
+uint8_t CMD=0; // command - shift regs for 7 segment display on the other core
+uint8_t LVAL_0; // glyph encoded into 8 bits
+uint8_t LVAL_1;
+uint8_t LVAL_2;
+uint8_t LVAL_3;
 
 // data stack
 #define STKSIZE 16
@@ -560,6 +567,51 @@ void _cpl() {
     digitalWrite(T, state);
 }
 
+void _cmd_fetch() {
+    DUP;
+    T=CMD;
+}
+
+void _cmd_store() { // hum
+// model on _flstore()
+    CMD=T;
+    DROP;
+/*
+
+   Forth runs on core0.
+
+   Functions executed in its setup() and loop() apply
+   only to itself - setup1() and loop1() ignore them.
+
+   commands written in forth must be communicated to
+   the other core through various mechanisms.
+
+   The first trial will be through either the (forth)
+   stack itself, or perhaps a cvariable (for simplicity).
+
+*/
+}
+
+void _lv0_store() {
+    LVAL_0=T; // glyph encoded into 8 bits
+    DROP;
+}
+
+void _lv1_store() {
+    LVAL_1=T;
+    DROP;
+}
+
+void _lv2_store() {
+    LVAL_2=T;
+    DROP;
+}
+
+void _lv3_store() {
+    LVAL_3=T;
+    DROP;
+}
+
 void _execute();
 
 void (*function[])()={
@@ -589,9 +641,15 @@ void (*function[])()={
     _flfetch, // 69
     _flstore, // 70
     _cpl, // 71
-    _wait_10_usec, // 72
-    _wait_1000_usec, // 73
-    _dropzbranch , // 74
+    _cmd_store, // 72
+    _cmd_fetch, // 73 new
+    _lv0_store, // 74
+    _lv1_store, // 75
+    _lv2_store, // 76
+    _lv3_store, // 77
+    _wait_10_usec, // 78
+    _wait_1000_usec, // 79
+    _dropzbranch , // 80
 };
 
 void _execute(){
