@@ -101,10 +101,12 @@ turnkey
 
 : noppp 1 #, drop ;
 
-: id ." Thu  6 Jan 17:55:54 UTC 2022" cr
+\ rp2040-sh_regForth-a/rp2040-sh_regForth-bb/main.fs
+
+: id ." Thu  6 Jan 21:27:58 UTC 2022" cr
      ." cerfaxita    74hc595 shift register" cr
      ." +fthenc +cmd +timing.cpp" cr \ +fthenc is forth encoding of glyphs
-     ." rp2040-sh_regForth-a" cr ;
+     ." rp2040-sh_regForth-bb" cr ;
 
 turnkey decimal initGPIO interpret
 
