@@ -113,10 +113,15 @@ code off 68 ,
 code fl@ 69 ,
 code fl! 70 ,
 code cpl 71 ,
-code cmd 72 , \ new
-code tusec 73 ,
-code msec 74 ,
--code /branch  75 ,
+code cmd! 72 , \ new
+code cmd@ 73 , \ new
+code lv0! 74 , \ new
+code lv1! 75 , \ new
+code lv2! 76 , \ new
+code lv3! 77 , \ new
+code tusec 78 ,
+code msec 79 ,
+-code /branch  80 ,
 
 :m begin (  - a)  here m;
 :m again ( a)  branch [ 2/ ] , m;

@@ -27,9 +27,27 @@ turnkey
        ." demo complete. "
 ;
 
-: id ." Tue  4 Jan 18:15:19 UTC 2022" cr
+: timex 15000 #, for msec next ;
+
+: demd \ no stack effects
+    3 #, for
+        7 #, cmd!
+        timex
+        8 #, cmd!
+        timex
+    next
+;
+
+: deme \ no stack effects
+    lv0!  lv1!  lv2!  lv3!
+    6 #, cmd!
+    \ timex
+    \ 3 #, for timex next
+;
+
+: id ." Thu  6 Jan 12:25:56 UTC 2022" cr
      ." lorkadees    74hc595 shift register" cr
-     ." +timing.cpp" cr
+     ." +cmd +timing.cpp" cr
      ." rp2040-sh_regForth-a" cr ;
 
 turnkey decimal initGPIO interpret

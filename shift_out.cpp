@@ -24,6 +24,13 @@ byte slew = 5;
 
 uint8_t ledval = 0;
 
+extern uint8_t LVAL_0; // glyph for column zero
+extern uint8_t LVAL_1; // glyph for column one
+extern uint8_t LVAL_2;
+extern uint8_t LVAL_3;
+
+extern uint8_t CMD; // at commands idea under investigation
+
 #define BLANKING 870
 
 #define TICKED 22000
@@ -155,6 +162,7 @@ void in_column_zero(void) {
     proc_encoding();
     for (int i = REPETITIONS; i > 0; i--) {
         pos = 15;
+        ledval = LVAL_0;
         flash_digit();
     }
 }
@@ -163,6 +171,7 @@ void in_column_one(void) { // DIGIT 2
     proc_encoding();
     for (int i = REPETITIONS; i > 0; i--) {
         pos = 22;
+        ledval = LVAL_1;
         flash_digit();
     }
 }
@@ -171,6 +180,7 @@ void in_column_two(void) {
     proc_encoding();
     for (int i = REPETITIONS; i > 0; i--) {
         pos = 27;
+        ledval = LVAL_2;
         flash_digit();
     }
 }
@@ -179,6 +189,7 @@ void in_column_three(void) {
     proc_encoding();
     for (int i = REPETITIONS; i > 0; i--) {
         pos = 29;
+        ledval = LVAL_3;
         flash_digit();
     }
 }
@@ -460,6 +471,13 @@ for (volatile unsigned long idx = (32 * 32 * 2) ; idx > 0; idx --) {
 
 extern uint8_t FL; // =0; // flags
 
+void bef_test(void) {
+    blankleds();
+    if (FL != 179) { // stop blinking
+        msg_bef0(); t_btwn_msgs();
+    }
+}
+
 void lfc_test(void) {
     blankleds();
     if (FL != 179) { // stop blinking
@@ -473,8 +491,34 @@ void lfc_test(void) {
     }
 }
 
+void msg_test(void) { // message comes from LVAL_0 thru 3
+    blankleds();
+    for (int j = 2; j > 0; j--) {
+        for (int k = DURATION; k > 0; k--) {
+            // encode_ltr_a();
+            in_column_zero();
+            // encode_ltr_c();
+            in_column_one();
+            // encode_zero();
+            in_column_two();
+            // encode_ltr_f();
+            in_column_three();
+        }
+    }
+}
+
+void nopp(void) { }
+
+// encodings are inexpensive, repeating them as actions, isn't.
+
 void loop_sr(void) {
-    lfc_test();
+    if (CMD == 6) { msg_test(); }
+    nopp();
+}
+/*
+    if (CMD == 7) { lfc_test(); return; }
+    if (CMD == 8) { bef_test(); return; }
+*/
 
 /*
 
@@ -541,6 +585,5 @@ void loop_sr(void) {
     }
     t_btwn_msgs(); // mating blankleds() begins loop_sr()
 */
-}
 
 // END.
