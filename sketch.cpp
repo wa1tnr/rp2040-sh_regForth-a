@@ -560,6 +560,23 @@ void _cpl() {
     digitalWrite(T, state);
 }
 
+void _command() { // hum
+/*
+
+   Forth runs on core0.
+
+   Functions executed in its setup() and loop() apply
+   only to itself - setup1() and loop1() ignore them.
+
+   commands written in forth must be communicated to
+   the other core through various mechanisms.
+
+   The first trial will be through either the (forth)
+   stack itself, or perhaps a cvariable (for simplicity).
+
+*/
+}
+
 void _execute();
 
 void (*function[])()={
@@ -589,9 +606,10 @@ void (*function[])()={
     _flfetch, // 69
     _flstore, // 70
     _cpl, // 71
-    _wait_10_usec, // 72
-    _wait_1000_usec, // 73
-    _dropzbranch , // 74
+    _command, // 72
+    _wait_10_usec, // 73
+    _wait_1000_usec, // 74
+    _dropzbranch , // 75
 };
 
 void _execute(){
