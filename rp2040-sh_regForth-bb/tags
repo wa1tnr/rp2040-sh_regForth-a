@@ -263,6 +263,6 @@ noppp	main.fs	+102
 id	main.fs	+106
 stimex	app.fs	+1
 n867	app.fs	+7
-run	app.fs	+78
+run	app.fs	+189
 .stack	job.fs	+60
 check	job.fs	+61
