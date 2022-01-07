@@ -679,16 +679,17 @@ void time_out_blinker(void) {
 }
 
 void login_msgs(void) {
-    Serial.println(RECENT_STAMP); // RECENT_STAMP      "Mon  3 Jan 23:34:21 UTC 2022"
+    Serial.println(RECENT_STAMP);
     Serial.println(PROGRAM_NAME);
     Serial.println(IP_NOTICE);
     Serial.println(LOCAL_CONTRIB);
-    Serial.println("");
-    // PROGRAM_NAME IP_NOTICE LOCAL_CONTRIB
-    // COMMIT_TIME_STAMP "Mon Jan  3 23:05:41 UTC 2022"
-    // BRANCH_STAMP      "rp2040-2core-7seg-shiftreg-bb   0.1.0-pre-alpha"
-    // COMMIT_STAMP      "a09c255"
-    Serial.println(FEATURE_STAMP); // FEATURE_STAMP     "+2core +7seg +2shfreg +stopstart     "
+    Serial.println();
+    Serial.print(COMMIT_TIME_STAMP);
+    Serial.print("            ");
+    Serial.println(COMMIT_STAMP);
+    Serial.println(BRANCH_STAMP);
+    Serial.println();
+    Serial.println(FEATURE_STAMP);
 }
 
 void loop_forth(){
