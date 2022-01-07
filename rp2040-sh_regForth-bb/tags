@@ -261,5 +261,8 @@ msga	main.fs	+39
 msgb	main.fs	+48
 noppp	main.fs	+102
 id	main.fs	+106
-.stack	job.fs	+59
-check	job.fs	+60
+stimex	app.fs	+1
+n867	app.fs	+7
+run	app.fs	+78
+.stack	job.fs	+60
+check	job.fs	+61
