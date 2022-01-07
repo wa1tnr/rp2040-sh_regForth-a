@@ -1,5 +1,5 @@
 \ libglyph.fs
-\ Thu  6 Jan 17:55:54 UTC 2022
+\ Fri  7 Jan 19:43:06 UTC 2022
 
 0
 [if]
@@ -7,6 +7,15 @@
 comments here
 
 [then]
+
+\ segments
+: sga $1 #, ;
+: sgb $2 #, ;
+: sgc $4 #, ;
+: sgd $8 #, ;
+: sge $10 #, ;
+: sgf $20 #, ;
+: sgg $40 #, ;
 
 : hw_test_enc
   0 #, 1 #, +
@@ -91,5 +100,6 @@ comments here
 : gl_
  0 #,
  0 #, + ;
+
 
 \ end.
