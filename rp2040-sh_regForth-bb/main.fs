@@ -27,62 +27,7 @@ turnkey
        ." demo complete. "
 ;
 
-: timex 15000 #, for msec next ;
-
-: demd \ no stack effects
-    3 #, for
-        7 #, cmd!
-        timex
-        8 #, cmd!
-        timex
-    next
-;
-
-: deme \ no stack effects
-    4  #,  lv0!
-    8  #,  lv1!
-    16 #,  lv2!
-    32 #,  lv3!
-    6  #,  cmd!
-;
-
-: demf \ no stack effects
-;
-
-: demnoneaa
-
-    127 #,  lv0!
-      0 #,  lv1!
-      0 #,  lv2!
-      0 #,  lv3!
-      6 #,  cmd!
-    timex
-      1 #,  cmd!
-
-      0 #,  lv0!
-    127 #,  lv1!
-      0 #,  lv2!
-      0 #,  lv3!
-      6 #,  cmd!
-    timex
-      1 #,  cmd!
-
-      0 #,  lv0!
-      0 #,  lv1!
-    127 #,  lv2!
-      0 #,  lv3!
-      6 #,  cmd!
-    timex
-      1 #,  cmd!
-
-      0 #,  lv0!
-      0 #,  lv1!
-      0 #,  lv2!
-    127 #,  lv3!
-      6 #,  cmd!
-    timex
-      1 #,  cmd!
-;
+: timex 5000 #, for msec next ;
 
 : blank
   gl_ lv3!
@@ -91,7 +36,8 @@ turnkey
   gl_ lv0!
 ;
 
-: demg \ no stack effects
+: msga \ no stack effects
+  start
   gl7 lv3!
   gl6 lv2!
   gl5 lv1!
@@ -99,11 +45,65 @@ turnkey
   6 #, cmd!
 ;
 
+: msgb \ no stack effects
+  start
+
+  gll lv3!
+  gle lv2!
+  gl_ lv1!
+  gl_ lv0!
+  6 #, cmd!
+  timex
+  blank
+
+  glf lv3!
+  gl0 lv2!
+  glc lv1!
+  gla lv0!
+  timex
+  blank
+
+  glc lv3!
+  gla lv2!
+  glf lv1!
+  gle lv0!
+  timex
+  blank
+
+  gl7 lv3!
+  gl7 lv2!
+  gl7 lv1!
+  gl7 lv0!
+  timex
+  blank
+
+  gl8 lv3!
+  gl8 lv2!
+  gl8 lv1!
+  gl8 lv0!
+  timex
+  blank
+
+  gl0 lv3!
+  gl0 lv2!
+  gl0 lv1!
+  gl0 lv0!
+  timex
+  blank
+
+  gl4 lv3!
+  gl4 lv2!
+  gl4 lv1!
+  gl4 lv0!
+  timex
+  blank
+;
+
 : noppp 1 #, drop ;
 
 \ rp2040-sh_regForth-a/rp2040-sh_regForth-bb/main.fs
 
-: id ." Thu  6 Jan 21:27:58 UTC 2022" cr
+: id ." Fri  7 Jan 19:43:06 UTC 2022" cr
      ." cerfaxita    74hc595 shift register" cr
      ." +fthenc +cmd +timing.cpp" cr \ +fthenc is forth encoding of glyphs
      ." rp2040-sh_regForth-bb" cr ;
