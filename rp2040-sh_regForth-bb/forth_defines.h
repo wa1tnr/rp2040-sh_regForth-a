@@ -1,4 +1,4 @@
-#warning seen forth_defines.h
+// warn 003: #warning seen forth_defines.h
 
 #define PROGRAM_NAME      "ARM-Forth"
 #define IP_NOTICE         "Copyright (C) 2016-2021 by Charles Shattuck."
