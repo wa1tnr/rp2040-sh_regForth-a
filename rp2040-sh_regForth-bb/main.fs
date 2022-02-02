@@ -103,7 +103,7 @@ turnkey
 
 \ rp2040-sh_regForth-a/rp2040-sh_regForth-bb/main.fs
 
-: id ." Fri  7 Jan 19:43:06 UTC 2022" cr
+: id ." Wed  2 Feb 14:58:58 UTC 2022" cr
      ." cerfaxita    74hc595 shift register" cr
      ." +fthenc +cmd +timing.cpp" cr \ +fthenc is forth encoding of glyphs
      ." rp2040-sh_regForth-bb" cr ;
