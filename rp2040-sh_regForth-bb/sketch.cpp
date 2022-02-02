@@ -1,7 +1,7 @@
 // sketch.cpp
 // Thu  6 Jan 17:55:54 UTC 2022
 
-#warning sketch.cpp seen
+// warn 001: #warning sketch.cpp seen
 
 #include <Arduino.h>
 #include "memory.h"
@@ -124,9 +124,13 @@ void _pbranch(){
 }
 
 // read 32 bits inline
+// uint32_t T=0; // cached top of data stack
 void _lit(){
+    uint32_t TQ=0;
     DUP;
-    T=memory[I++]+(memory[I++]<<16);
+ // T=memory[I++]+(memory[I++]<<16);
+    TQ = memory[I++];
+    T = (memory[I++]<<16) + TQ;
 }
 
 void _next(){
@@ -702,6 +706,9 @@ next:
     W=memory[I++];
     (*function[memory[W++]])();
     goto next;
+    while(-1);  // trap
+    goto abort; // compiler kludge
+    goto quit;  // compiler kludge
 }
 
 extern void setup_sr(void);
