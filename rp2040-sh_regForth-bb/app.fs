@@ -38,126 +38,126 @@
 
   \ stanza
 
-  gl8 lv0! stimex stimex stimex stimex
-
-
-
-
-  gl_ lv2!
-  gl_ lv3!
-
-  gl_ lv1!
-  gl_ lv2!
-
-  gl_ lv0!
-  gl8 lv1!
-
-  \ stanza
-
-  gl6 lv0! stimex stimex stimex stimex
-
-
-
-
-  gl_ lv2!
-  gl_ lv3!
-
-  gl_ lv1!
-  gl8 lv2!
-
-  gl_ lv0!
-  gl6 lv1!
-
-  \ stanza
-
-  gl7 lv0! stimex stimex stimex stimex
-
-
-
-  gl_ lv2!
-  gl8 lv3!
-
-  gl_ lv1!
-  gl6 lv2!
-
-  gl_ lv0!
-  gl7 lv1!
-
-  \ stanza
-
   gl5 lv0! stimex stimex stimex stimex
 
 
+
+
   gl_ lv2!
-  gl6 lv3!
+  gl_ lv3!
 
   gl_ lv1!
-  gl7 lv2!
+  gl_ lv2!
 
   gl_ lv0!
   gl5 lv1!
 
   \ stanza
 
-  gl3 lv0! stimex stimex stimex stimex
+  gl2 lv0! stimex stimex stimex stimex
+
+
 
 
   gl_ lv2!
-  gl7 lv3!
+  gl_ lv3!
 
   gl_ lv1!
   gl5 lv2!
 
   gl_ lv0!
-  gl3 lv1!
+  gl2 lv1!
 
   \ stanza
 
-  gl0 lv0! stimex stimex stimex stimex
+  gl4 lv0! stimex stimex stimex stimex
+
 
 
   gl_ lv2!
   gl5 lv3!
 
   gl_ lv1!
+  gl2 lv2!
+
+  gl_ lv0!
+  gl4 lv1!
+
+  \ stanza
+
+  gl8 lv0! stimex stimex stimex stimex
+
+
+  gl_ lv2!
+  gl2 lv3!
+
+  gl_ lv1!
+  gl4 lv2!
+
+  gl_ lv0!
+  gl8 lv1!
+
+  \ stanza
+
+  gl1 lv0! stimex stimex stimex stimex
+
+
+  gl_ lv2!
+  gl4 lv3!
+
+  gl_ lv1!
+  gl8 lv2!
+
+  gl_ lv0!
+  gl1 lv1!
+
+  \ stanza
+
+  gl2 lv0! stimex stimex stimex stimex
+
+
+  gl_ lv2!
+  gl8 lv3!
+
+  gl_ lv1!
+  gl1 lv2!
+
+  gl_ lv0!
+  gl2 lv1!
+
+  \ stanza
+
+  gl3 lv0! stimex stimex stimex stimex
+
+  gl_ lv2!
+  gl1 lv3!
+
+  gl_ lv1!
+  gl2 lv2!
+
+  gl_ lv0!
+  gl3 lv1!
+
+  \ stanza
+
+  gl_ lv0! stimex stimex stimex stimex
+
+  gl_ lv2!
+  gl2 lv3!
+
+  gl_ lv1!
   gl3 lv2!
 
   gl_ lv0!
-  gl0 lv1!
+  gl_ lv1!
 
   \ stanza
 
-  gl9 lv0! stimex stimex stimex stimex
+  gl_ lv0! stimex stimex stimex stimex
+
 
   gl_ lv2!
   gl3 lv3!
-
-  gl_ lv1!
-  gl0 lv2!
-
-  gl_ lv0!
-  gl9 lv1!
-
-  \ stanza
-
-  gl_ lv0! stimex stimex stimex stimex
-
-  gl_ lv2!
-  gl0 lv3!
-
-  gl_ lv1!
-  gl9 lv2!
-
-  gl_ lv0!
-  gl_ lv1!
-
-  \ stanza
-
-  gl_ lv0! stimex stimex stimex stimex
-
-
-  gl_ lv2!
-  gl9 lv3!
 
   gl_ lv1!
   gl_ lv2!
